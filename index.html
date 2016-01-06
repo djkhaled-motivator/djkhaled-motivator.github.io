@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+ <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="assets/materialize/css/materialize.css">
+  <link rel="stylesheet" href="assets/style.css">
+
+
+          
+<body bgcolor="#546e7a">
+
+
+
+
+	<title>DJ KHALED MOTiVAITON</title>
+
+
+</head>
+
+
+<body>
+ <div class="row" id="top-card">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Dj Khaled</span>
+              <p>DJ Khaled is a the best in the music industry. He has changed a lot and has also changed the world. He is inspirational and has taken over the supreme leader spot from KIM JON UN</p>
+            </div>
+            <div class="card-action">
+              <a href="http://wethebeststore.com">Store</a>
+              <a href="https://www.facebook.com/officialdjkhaled/?fref=ts">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+
+
+<div class="button-div" id="button-div" >
+
+	<a class="waves-effect waves-light btn-large" onclick="myFunction()">ANOTHER ONE</a>
+	<h1>What's up my nig? That is me greeting you with love. But if somebody takes it another way, they dumb. That's like dumb. That's dumb. Like, they dumb -DJ KHALED 2015</h1>
+</div>
+
+
+<div class="button-next" id="button-next" >
+  <a class="waves-effect waves-teal btn-flat" onClick="videoChanger()">More Motivation</a>
+</div>
+
+
+<div id="youtube">
+	
+</div>
+
+<script>
+var videos = ["https://www.youtube.com/embed/K23_vkcsncA","https://www.youtube.com/embed/vZ7fedsomvA","https://www.youtube.com/embed/KQfoZNE_u10","https://www.youtube.com/embed/I0dBVsCe2fM","https://www.youtube.com/embed/jEJLKNXv8fM", "https://www.youtube.com/embed/gHgAvor-oi0" , "https://www.youtube.com/embed/tcEpHnaZMgg", "https://www.youtube.com/embed/GGXzlRoNtHU" , "https://www.youtube.com/embed/Zen0U1BUUyg?list=PL02NJ2ydKsOmWyX6J6w4FfnbrQj86R2ek" ];
+var counter = 0;
+
+document.getElementById('youtube').style.display = 'none';
+document.getElementById('button-next').style.display = 'none';
+
+
+function getNextURL() {
+	if (counter == videos.length) {
+		counter = 0;
+	}
+	var toReturn = '<iframe width="' + screen.width + '" height="' + screen.height +'" src="' + videos[counter] + '?autoplay=1&cc_load_policy=1." frameborder="0" allowfullscreen></iframe>';
+	counter++;
+	return toReturn;
+}
+
+
+
+
+
+function videoChanger(){
+	document.getElementById('youtube').innerHTML = getNextURL();
+
+}
+function myFunction() {
+	document.getElementById('button-div').style.display = 'none';
+	document.getElementById('youtube').style.display = 'block';
+	document.getElementById('button-next').style.display = 'block';
+	document.getElementById('youtube').innerHTML = getNextURL();
+	document.getElementById('top-card').style.display = 'none';
+}
+
+</script>
+
+
+
+</body>
+
+
+</html>	
