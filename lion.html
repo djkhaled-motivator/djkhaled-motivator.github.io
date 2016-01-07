@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lion Order</title>
+    <body bgcolor="#546e7a">
+
+
+
+</head>
+<body>
+<div id="lion" onclick="openMouth('assets/lionopen.jpg')">
+	<img src="assets/lion.jpg">
+</div>
+
+<script>
+
+
+function openMouth(image){
+	  document.getElementById('lion').innerHTML = "<img src=" + image + ">"
+	  var audio = new Audio('assets/Lioon.mp3');
+audio.play();
+
+
+setInterval(changeBack, 1500);
+function changeBack(){
+	document.getElementById('lion').innerHTML = "<img src=\"assets/lion.jpg\">"
+}
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>
