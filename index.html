@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Daily Snapchat Feed</a>
+    <a class="waves-effect waves-light btn modal-trigger" id="videofeed" href="#modal1">Daily Snapchat Feed</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -37,7 +37,6 @@
             <div id="daily-video"></div>
         </div>
     </div>
-
     <div class="button-div" id="button-div">
 
         <a class="waves-effect waves-light btn-large" onclick="myFunction()">ANOTHER ONE</a>
@@ -65,6 +64,7 @@
                 var g = document.getElementById('daily-video').innerHTML;
                 document.getElementById('daily-video').innerHTML = '';
                 document.getElementById('daily-video').innerHTML = g;
+
             } 
         });
 
@@ -105,6 +105,9 @@
             document.getElementById('button-next').style.display = 'block';
             document.getElementById('youtube').innerHTML = getNextURL();
             document.getElementById('top-card').style.display = 'none';
+            document.getElementById('videofeed').style.display = 'none';
+
+
         }
     </script>
 </body>
