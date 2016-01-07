@@ -22,13 +22,11 @@
                     <p>DJ Khaled is a the best in the music industry. He has changed a lot and has also changed the world. He is inspirational and has taken over the supreme leader spot from KIM JON UN.</p>
                 </div>
                 <div class="card-action">
-                    <a href="http://wethebeststore.com">Store</a>
-                    <a href="https://www.facebook.com/officialdjkhaled/?fref=ts">Facebook</a>
+                    <a class="waves-effect waves-light btn modal-trigger" style="border-radius: 0px;" id="videofeed" href="#modal1">Daily Snapchat Feed</a>
                 </div>
             </div>
         </div>
     </div>
-    <a class="waves-effect waves-light btn modal-trigger" id="videofeed" href="#modal1">Daily Snapchat Feed</a>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -37,78 +35,56 @@
             <div id="daily-video"></div>
         </div>
     </div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px; height:20px; width:20px;">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red" onclick="website('https://www.facebook.com/officialdjkhaled/?fref=ts')"><i class="material-icons">F</i></a></li>
+      <li><a class="btn-floating yellow darken-1" onclick="website('http://wethebestmusicgroup.com/')"><i class="material-icons">S</i></a></li>
+      <li><a class="btn-floating green" onclick="website('https://www.reddit.com/r/wethebest/?ref=search_subreddits')"><i class="material-icons">R</i></a></li>
+      <li><a class="btn-floating blue" onclick="website('https://www.youtube.com/user/DJKhaledVEVO/videos')"><i class="material-icons">M</i></a></li>
+    </ul>
+  </div>
+
+        
+
+
+
+
     <div class="button-div" id="button-div">
 
-        <a class="waves-effect waves-light btn-large" onclick="myFunction()">ANOTHER ONE</a>
+        <a class="waves-effect waves-light btn-large" onclick="anotherOne()">ANOTHER ONE</a>
         <h1>What's up my nig? That is me greeting you with love. But if somebody takes it another way, they dumb. That's like dumb. That's dumb. Like, they dumb -DJ KHALED 2015</h1>
     </div>
 
 
+    <div class="button-next" id="main-menu">
+        <a class="waves-effect waves-teal btn-flat" onClick="mainMenu()">Main Menu</a>
+    </div>
     <div class="button-next" id="button-next">
         <a class="waves-effect waves-teal btn-flat" onClick="videoChanger()">More Motivation</a>
     </div>
 
+    <div id="youtube"></div>
 
-    <div id="youtube">
-
-    </div>
-
+    <script src="assets/js/script.js"></script>
     <script>
-        var videos = ["https://www.youtube.com/embed/K23_vkcsncA", "https://www.youtube.com/embed/vZ7fedsomvA", "https://www.youtube.com/embed/KQfoZNE_u10", "https://www.youtube.com/embed/I0dBVsCe2fM", "https://www.youtube.com/embed/jEJLKNXv8fM", "https://www.youtube.com/embed/gHgAvor-oi0", "https://www.youtube.com/embed/tcEpHnaZMgg", "https://www.youtube.com/embed/GGXzlRoNtHU", "https://www.youtube.com/embed/Zen0U1BUUyg?list=PL02NJ2ydKsOmWyX6J6w4FfnbrQj86R2ek"];
-        var counter = 0;
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        document.getElementById('youtube').style.display = 'none';
-        document.getElementById('button-next').style.display = 'none';
-        $('.modal-trigger').leanModal({
-            complete: function() {
-                var g = document.getElementById('daily-video').innerHTML;
-                document.getElementById('daily-video').innerHTML = '';
-                document.getElementById('daily-video').innerHTML = g;
-
-            } 
-        });
-
-        function getNextURL() {
-            if (counter == videos.length) {
-                counter = 0;
-            }
-            var toReturn = '<iframe width="' + screen.width + '" height="' + screen.height + '" src="' + videos[counter] + '?autoplay=1&cc_load_policy=1." frameborder="0" allowfullscreen></iframe>';
-            counter++;
-            return toReturn;
-        }
-
-        var i;
-
-        function GetYoutubeVideo() {
-            $.ajax({
-                url: 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyBZ4orRfAgIo99yr9e2cxEUDtz9HhWALT0&channelId=UCVnvMGHpyUl7WR9LA5bOKcw&part=snippet,id&order=date&maxResults=1',
-                success: function(data) {
-                    document.getElementById('daily-video').innerHTML = '<iframe width="600px" height="300px" src="https://www.youtube.com/embed/' + data.items[0].id.videoId + '" frameborder="0" allowfullscreen></iframe>';
-                },
-                error: function() {
-                    console.log("Error");
-                }
-            });
-        }
-
-        GetYoutubeVideo();
-
-
-        function videoChanger() {
-            document.getElementById('youtube').innerHTML = getNextURL();
-
-        }
-
-        function myFunction() {
-            document.getElementById('button-div').style.display = 'none';
-            document.getElementById('youtube').style.display = 'block';
-            document.getElementById('button-next').style.display = 'block';
-            document.getElementById('youtube').innerHTML = getNextURL();
-            document.getElementById('top-card').style.display = 'none';
-            document.getElementById('videofeed').style.display = 'none';
-
-
-        }
+        ga('create', 'UA-72119267-1', 'auto');
+        ga('send', 'pageview');
     </script>
 </body>
+
 </html>
