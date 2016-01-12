@@ -10,13 +10,22 @@
 <body>
 <div id="lion" onclick="openMouth('assets/lionopen.jpg')">
 	<img src="assets/lion.jpg">
+
 </div>
+		<img src="assets/flop.gif">
+
+		<div id="ben" onClick="booming()">
+			<img src="assets/ben.jpg">
+
+		</div>
+
+
 
 <script>
 
 
 function openMouth(image){
-	  document.getElementById('lion').innerHTML = "<img src=" + image + ">"
+	  document.getElementById('lion').innerHTML = "<img src=" + image + "> +"
 	  var audio = new Audio('assets/Lioon.mp3');
 audio.play();
 
@@ -28,6 +37,10 @@ function changeBack(){
 
 }
 
+function booming(){
+	  var audio = new Audio('assets/booming.mp3');
+audio.play();
+}
 
 </script>
 
